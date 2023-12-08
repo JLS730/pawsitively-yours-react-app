@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { useEffect, useState } from 'react'
 
-import { useParams, Link, useLocation } from 'react-router-dom'
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
 
 import { firebaseConfig } from '../scripts/firebase'
 import { initializeApp } from "firebase/app";
@@ -30,8 +30,8 @@ const DogInformation = () => {
 
     const auth = getAuth();
 
-    // const location = useLocation()
-    const { from } = useLocation()
+    const navigate = useNavigate()
+    // const { from } = useLocation()
 
     useEffect(() => {
         setSavePetToggle(false)

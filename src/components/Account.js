@@ -6,6 +6,8 @@ import { initializeApp } from "firebase/app";
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
+import { useNavigate } from 'react-router-dom';
+
 
 import { doc, getFirestore, getDoc, getDocs, setDoc, deleteDoc, collection } from "firebase/firestore";
 
@@ -43,6 +45,8 @@ const Account = () => {
   const saturdayRef = useRef(null)
   const sundayRef = useRef(null)
 
+  const navigate = useNavigate()
+
   const app = initializeApp(firebaseConfig);
   const firestoreDB = getFirestore(app)
 
@@ -57,6 +61,10 @@ const Account = () => {
 
     console.log(currentUserInformation.uid)
   }, [currentUserInformation])
+
+  function handleRefreshPage() {
+    navigate(0)
+  }
 
   async function handleFavoriteDeletion(dogName) {
     console.log(dogName)
@@ -257,9 +265,14 @@ const Account = () => {
                   <div className={`adoption-photo-container-${x} adoption-photo-containers`}>
                     {/* <div className="adoption-delete-button-container" onClick={() => handleFavoriteDeletion(dog.name)}> */}
                     <div className="adoption-delete-button-container" onClick={(event) => {
+                      // handleGetFavoritesInformation()
                       handleFavoriteDeletion(dog.name)
-                      
                       event.target.parentElement.parentElement.remove()
+
+                      setTimeout(() => {
+
+                        handleRefreshPage()
+                      }, 100)
                     }}>
                       <i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i>
                     </div>
@@ -415,6 +428,7 @@ const Account = () => {
           </div>
           <div className="account-navigation-settings-container" onClick={() => {
             handleGetUserInformation()
+            // handleGetFavoritesInformation()
 
             setSettingsPageToggle(true)
             setFavoritesPageToggle(false)
