@@ -272,7 +272,7 @@ const Account = () => {
                       setTimeout(() => {
 
                         handleRefreshPage()
-                      }, 100)
+                      }, 300)
                     }}>
                       <i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i>
                     </div>
