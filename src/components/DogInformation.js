@@ -42,6 +42,8 @@ const DogInformation = () => {
         handlePetRandomizer()
         handleCurrentUserLoggedIn()
 
+        window.scrollTo(0, 0)
+
         if(currentUserInformation.uid !== undefined) {
             // handleGetUserInformation()
             // console.log('Caught')
