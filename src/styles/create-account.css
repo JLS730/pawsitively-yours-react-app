@@ -1,0 +1,110 @@
+.create-account-container {
+  width: 100%;
+  height: calc(100vh - 57.6px - 151.133px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.7em;
+}
+.create-account-container .create-account-credentials-container {
+  background-color: #aee6eb;
+  border: 1px solid black;
+  width: 40em;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.3em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em 0;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-intro-container .create-account-credentials-user-container {
+  height: 6em;
+  width: 6em;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-intro-container .create-account-credentials-intro-text {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  padding-top: 0.5em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 95%;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container input {
+  margin: 0.5em 0;
+  font-family: sans-serif;
+  font-size: 0.95em;
+  padding: 0.2em;
+  border-radius: 0.3em;
+  width: 90%;
+  outline: none;
+  border: 1px solid black;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-input-email {
+  margin-bottom: 2.5em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-help-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-help-container .create-account-credentials-remember-me-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 10em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-help-container .create-account-credentials-remember-me-container input {
+  width: 20%;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-help-container .create-account-credentials-remember-me-container label {
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 0.85em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-help-container .create-account-credentials-forgrot-password {
+  font-family: sans-serif;
+  font-size: 0.85em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-sign-in-btn-container {
+  padding: 2em 0;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-sign-in-btn-container p {
+  color: red;
+  padding-bottom: 1em;
+  font-family: sans-serif;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-sign-in-btn-container .create-account-credentials-sign-in-btn {
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.5em 7em;
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 0.3em;
+}
+.create-account-container .create-account-credentials-container .create-account-credentials-input-container .create-account-credentials-create-account {
+  color: black;
+  padding: 1em 0;
+}/*# sourceMappingURL=create-account.css.map */

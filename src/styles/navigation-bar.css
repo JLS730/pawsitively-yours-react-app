@@ -1,0 +1,172 @@
+.navigation-bar-container {
+  background-color: #00b4d8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.navigation-bar-container .navigation-bar-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation-bar-container .navigation-bar-left img {
+  height: 23px;
+  cursor: pointer;
+}
+.navigation-bar-container .navigation-bar-right {
+  width: 12em;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+.navigation-bar-container .navigation-bar-right ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+.navigation-bar-container .navigation-bar-right ul li {
+  font-family: sans-serif;
+  font-size: 0.95em;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container i {
+  padding: 0.3em 0.2em;
+  color: #007a92;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container .account-down-arrow {
+  cursor: pointer;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container .account-drop-down-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(231, 231, 231);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  border-radius: 0.3em;
+  border: 1px solid rgb(201, 201, 201);
+  padding: 1em;
+  cursor: auto;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container .account-drop-down-container p {
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container .account-drop-down-container-logged-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(231, 231, 231);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  border-radius: 0.3em;
+  border: 1px solid rgb(201, 201, 201);
+  padding: 0.5em;
+  cursor: auto;
+}
+.navigation-bar-container .navigation-bar-right .navigation-bar-account-container .account-drop-down-container-logged-in p {
+  margin: 0.4em;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container {
+  display: none;
+  position: absolute;
+  right: 3em;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .navigation-hamburger-menu {
+  height: 0.1em;
+  width: 1.6em;
+  background-color: black;
+  border-radius: 0.3em;
+  position: absolute;
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .navigation-hamburger-menu::after {
+  content: "";
+  height: 0.1em;
+  width: 1.6em;
+  background-color: black;
+  border-radius: 0.3em;
+  position: absolute;
+  transform: translateY(0.5em);
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .navigation-hamburger-menu::before {
+  content: "";
+  height: 0.1em;
+  width: 1.6em;
+  background-color: black;
+  border-radius: 0.3em;
+  position: absolute;
+  transform: translateY(-0.5em);
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .account-drop-down-hamburger-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(231, 231, 231);
+  position: absolute;
+  bottom: -51px;
+  left: -51px;
+  z-index: 1;
+  border-radius: 0.3em;
+  border: 1px solid rgb(201, 201, 201);
+  padding: 1em;
+  cursor: auto;
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .account-drop-down-hamburger-container p {
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .account-drop-down-hamburger-container-logged-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(231, 231, 231);
+  position: absolute;
+  bottom: -75px;
+  left: -51px;
+  z-index: 1;
+  border-radius: 0.3em;
+  border: 1px solid rgb(201, 201, 201);
+  padding: 0.5em;
+  cursor: auto;
+}
+.navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .account-drop-down-hamburger-container-logged-in p {
+  margin: 0.4em;
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .navigation-bar-right ul {
+    display: none !important;
+  }
+  .navigation-bar-right .navigation-bar-account-container {
+    display: none !important;
+  }
+  .navigation-bar-right .navigation-hamburger-menu-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}/*# sourceMappingURL=navigation-bar.css.map */

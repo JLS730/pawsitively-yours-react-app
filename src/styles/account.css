@@ -1,0 +1,234 @@
+.account-section {
+  width: 1100px;
+  max-width: 100%;
+  margin: auto;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11.85em 0.7em;
+}
+.account-section .account-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80em;
+}
+.account-section .account-container .account-navigation-bar-container {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  width: 100%;
+}
+.account-section .account-container .account-navigation-bar-container div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.account-section .account-container .account-navigation-bar-container div p {
+  font-family: sans-serif;
+  padding: 0.5em 0.8em;
+  margin: 0 0.5em;
+}
+.account-section .account-container .account-navigation-bar-container div .account-navigation-container-selected {
+  width: 75%;
+  height: 0.3em;
+  background-color: red;
+}
+.account-section .account-container .account-page-container {
+  width: 100%;
+  min-height: 43em;
+  padding: 1em;
+}
+.account-section .account-container .account-page-container .favorite-pet-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers {
+  height: 19em;
+  width: 14em;
+  background-color: aliceblue;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 4px solid #caf0f8;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-delete-button-container {
+  position: absolute;
+  top: 1em;
+  right: 0.5em;
+  border-radius: 50%;
+  background-color: black;
+  transition: 0.1s all linear;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-delete-button-container i {
+  color: white;
+  transition: 0.1s all linear;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-delete-button-container:hover {
+  background-color: white;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-delete-button-container:hover i:hover {
+  color: red;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers img {
+  height: 115%;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-photo-box-shadow {
+  height: 20%;
+  width: 100%;
+  background-color: #caf0f8;
+  position: absolute;
+  bottom: 0;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-photo-information-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: black;
+  font-family: sans-serif;
+  padding: 0.7em;
+}
+.account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-photo-information-container p {
+  padding-top: 0.4em;
+}
+.account-section .account-container .account-page-container .settings-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1em 0;
+}
+.account-section .account-container .account-page-container .settings-page .settings-about-you-container {
+  width: 80%;
+  padding: 2.5em 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-about-you-container .about-you-title-text {
+  font-family: sans-serif;
+  padding-bottom: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-about-you-container .about-you-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 3em;
+  gap: 3em;
+  background-color: azure;
+  width: 100%;
+}
+.account-section .account-container .account-page-container .settings-page .settings-about-you-container .about-you-container div {
+  width: 20em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-about-you-container .about-you-container div p {
+  font-family: sans-serif;
+  padding-bottom: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-about-you-container .about-you-container div input {
+  font-family: sans-serif;
+  padding: 0.3em;
+  width: 100%;
+  border-radius: 0.3em;
+  border: 1px solid black;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container {
+  width: 80%;
+  padding: 2.5em 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-availability-title-text {
+  font-family: sans-serif;
+  padding-bottom: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-time-container {
+  padding: 2em;
+  width: 100%;
+  font-family: sans-serif;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-time-container .contact-time-text {
+  padding-bottom: 0.4em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-time-container .contact-time-instruction-text {
+  padding-bottom: 1em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-time-container .times-container {
+  padding-left: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-time-container .times-container div {
+  padding-top: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-time-container .times-container div label {
+  padding-left: 0.7em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-day-container {
+  padding: 2em;
+  width: 100%;
+  font-family: sans-serif;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-day-container .contact-day-text {
+  padding-bottom: 0.4em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-day-container .contact-day-instruction-text {
+  padding-bottom: 1em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-day-container .days-container {
+  padding-left: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-day-container .days-container div {
+  padding-top: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-availability-container .contact-day-container .days-container div label {
+  padding-left: 0.7em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-address-container {
+  width: 80%;
+  padding: 2.5em 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-address-container .address-title-text {
+  font-family: sans-serif;
+  padding-bottom: 0.5em;
+}
+.account-section .account-container .account-page-container .settings-page .settings-address-container .address-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.account-section .account-container .account-page-container .settings-page .settings-address-container .address-container div {
+  width: 100%;
+}
+.account-section .account-container .account-page-container .settings-page .settings-address-container .address-container div p {
+  font-family: sans-serif;
+  padding: 1.7em 0 0.6em 0;
+}
+.account-section .account-container .account-page-container .settings-page .settings-address-container .address-container div input {
+  font-family: sans-serif;
+  padding: 0.3em;
+  width: 90%;
+  border-radius: 0.3em;
+  border: 1px solid black;
+}
+.account-section .account-container .account-page-container .settings-page button {
+  background-color: white;
+  width: 8.5em;
+  border: 1px solid black;
+  border-radius: 0.3em;
+  padding: 0.2em;
+  font-family: sans-serif;
+  transition: 0.1s all linear;
+}
+.account-section .account-container .account-page-container .settings-page button:hover {
+  background-color: #007a92;
+  color: white;
+  border: 1px solid #007a92;
+}/*# sourceMappingURL=account.css.map */

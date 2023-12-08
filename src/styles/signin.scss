@@ -1,0 +1,133 @@
+.login-container {
+    // background-color: aqua;
+    width: 100%;
+    max-height: calc(100vh - 57.6px - 151.133px);
+    min-height: calc(100vh - 32px - 151.133px);
+    // min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 .7em;
+
+    .login-credentials-container {
+        background-color: #aee6eb;
+        border: 1px solid black;
+        width: 40em;
+        max-width: 100%;
+        // height: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: .3em;
+
+        .login-credentials-intro-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1em 0;
+
+            .login-credentials-user-container {
+                height: 6em;
+                width: 6em;
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+            }
+            
+
+            .login-credentials-intro-text {
+                font-family: sans-serif;
+                font-size: 1.5em;
+                padding-top: .5em;
+            }
+        }
+
+        .login-credentials-input-container {
+            // background-color: gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 95%;
+
+            input {
+                margin: .5em 0;
+                font-family: sans-serif;
+                font-size: .95em;
+                padding: .2em;
+                border-radius: .3em;
+                width: 90%;
+                outline: none;
+                border: 1px solid black;
+            }
+            
+            .login-credentials-help-container {
+                // background-color: aqua;
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .login-credentials-remember-me-container {
+                    // background-color: azure;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 10em;
+
+                    input {
+                        width: 20%;
+                    }
+
+                    label {
+                        // background-color: greenyellow;
+                        width: 100%;
+                        font-family: sans-serif;
+                        font-size: .85em;
+                    }
+                }
+
+                .login-credentials-forgrot-password {
+                    font-family: sans-serif;
+                    font-size: .85em;
+                }
+            }
+
+            .login-credentials-incorrect-text {
+                color: red;
+                padding-top: 1em;
+                font-family: sans-serif;
+                font-size: 1.3em;
+            }
+
+            .login-credentials-sign-in-btn-container {
+                // background-color: yellow;
+                padding: 1em 0;
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .login-credentials-sign-in-btn {
+                    font-family: sans-serif;
+                    font-size: 1.1em;
+                    font-weight: bold;
+                    padding: .3em 6.5em;
+                    // width: 90%;
+                    border: 1px solid black;
+                    border-radius: .3em;
+                }
+            }
+
+            .login-credentials-create-account {
+                color: black;
+                padding: 1em 0;
+                font-family: sans-serif;
+            }
+        }
+    }
+}

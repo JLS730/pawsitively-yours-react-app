@@ -1,0 +1,267 @@
+.homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.homepage-container .homepage-banner-container {
+  background-color: rgb(244, 252, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1100px;
+  max-width: 100%;
+  height: 9em;
+  border-bottom-left-radius: 0.3em;
+  border-bottom-right-radius: 0.3em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.homepage-container .homepage-banner-container img {
+  height: 90%;
+}
+.homepage-container .homepage-banner-container .homepage-banner-text-container p {
+  font-family: sans-serif;
+  padding: 0.3em 0;
+  font-size: 0.95em;
+  font-family: sans-serif;
+}
+.homepage-container .homepage-information-container {
+  background-color: rgb(244, 252, 255);
+  font-family: sans-serif;
+  width: 1100px;
+  max-width: 100%;
+  padding: 0 1em;
+  margin-top: 3em;
+  border-radius: 0.3em;
+  border: 3px solid #ddf8fd;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.homepage-container .homepage-information-container .homepage-information-title {
+  font-size: 34px;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+.homepage-container .homepage-information-container p {
+  font-size: 1.05em;
+  padding: 0.7em 0;
+}
+.homepage-container .homepage-information-container .homepage-information-restrictions {
+  padding: 0 1em;
+  width: 95%;
+  margin-left: 0.5em;
+  background-color: #ebebeb;
+  font-style: italic;
+}
+.homepage-container .homepage-information-container .homepage-information-website-cookies {
+  font-weight: bold;
+}
+.homepage-container .dog-adoption-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1100px;
+  max-width: 100%;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4em 1em 3em 1em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-left {
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-left .dog-adoption-search-input-container {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0.3em;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-left .dog-adoption-search-input-container .dog-adoption-search-input {
+  width: 100%;
+  font-size: 0.9em;
+  padding: 0.1em;
+  border: none;
+  outline: none;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-left .dog-adoption-search-input-container i {
+  cursor: pointer;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div {
+  position: relative;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div button {
+  padding: 0.1em 0.5em;
+  font-family: sans-serif;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0 0.4em;
+  cursor: pointer;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .sex-selection-menu {
+  position: absolute;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0.1em 0.5em;
+  font-family: sans-serif;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0 0.4em;
+  width: 7em;
+  left: 0;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .sex-selection-menu div label {
+  padding: 0.6em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .age-selection-menu {
+  position: absolute;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0.1em 0.5em;
+  font-family: sans-serif;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0 0.4em;
+  width: 7em;
+  left: 0;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .age-selection-menu div label {
+  padding: 0.6em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .size-selection-menu {
+  position: absolute;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0.1em 0.5em;
+  font-family: sans-serif;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 0 0.4em;
+  width: 7em;
+  left: 0;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .size-selection-menu div label {
+  padding: 0.6em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-search-container .dog-adoption-search-container-right div .clear-all-btn {
+  background-color: rgb(255, 239, 239);
+  color: rgb(255, 65, 65);
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container {
+  padding: 2em 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .dog-adoption-no-results-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .dog-adoption-no-results-container h2 {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2.2em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .dog-adoption-no-results-container img {
+  width: 95%;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .adoption-photo-containers {
+  height: 20em;
+  width: 15em;
+  background-color: aliceblue;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 4px solid #caf0f8;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .adoption-photo-containers img {
+  height: 115%;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .adoption-photo-containers .adoption-photo-box-shadow {
+  height: 20%;
+  width: 100%;
+  background-color: #caf0f8;
+  position: absolute;
+  bottom: 0;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .adoption-photo-containers .adoption-photo-information-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: black;
+  font-family: sans-serif;
+  padding: 0.7em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-photo-container .adoption-photo-containers .adoption-photo-information-container p {
+  padding-top: 0.4em;
+}
+.homepage-container .dog-adoption-container .dog-adoption-load-more-btn {
+  margin: 3em 0;
+  font-family: sans-serif;
+  font-size: 15px;
+  padding: 0.3em 1.5em;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  background-color: white;
+  transition: 0.1s all linear;
+  cursor: pointer;
+}
+.homepage-container .dog-adoption-container .dog-adoption-load-more-btn:hover {
+  background-color: #007a92;
+  color: white;
+  border: 1px solid #007a92;
+}
+
+@media (max-width: 770px) {
+  .homepage-information-container .homepage-information-title {
+    text-align: center;
+  }
+  .homepage-information-container p {
+    text-align: justify;
+  }
+}
+@media (max-width: 700px) {
+  .dog-adoption-search-container {
+    flex-direction: column !important;
+  }
+  .dog-adoption-search-container .dog-adoption-search-container-left {
+    padding-bottom: 1.5em;
+    min-width: 70% !important;
+  }
+}/*# sourceMappingURL=homepage.css.map */
