@@ -22,7 +22,7 @@ const Homepage = () => {
     const searchInputRef = useRef(null)
 
     useEffect(() => {
-        
+        window.scrollTo(0, 0)
 
         // console.log(currentFilter)
 

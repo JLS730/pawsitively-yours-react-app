@@ -132,16 +132,27 @@ const DogInformation = () => {
                         <div className="current-dog-information-container">
                             <div className="current-dog-name-and-save-container">
                                 <h2 className="current-dog-name">{currentDog.name}</h2>
-                                <div className="current-dog-save-container" onMouseOver={() => handleGetUserInformation()} onClick={() => {
-                                    handleUserSubmittedInformation()
-
-                                    if(petSavedToggle) {
+                                <div className="current-dog-save-container" onMouseOver={() => {
+                                    if(Object.keys(currentUserInformation).length === 0) {
+                                        console.log(currentUserInformation.uid)
                                         return
                                     }
 
-                                    setSavePetToggle(true)
-                                    setPetSavedToggle(true)
-                                    console.log('passed')                               
+                                    handleGetUserInformation()
+                                }} onClick={() => {
+                                    if(currentUserInformation.uid === undefined) {
+                                        navigate('/Signin')
+                                    } else {
+                                        handleUserSubmittedInformation()
+    
+                                        if(petSavedToggle) {
+                                            return
+                                        }
+    
+                                        setSavePetToggle(true)
+                                        setPetSavedToggle(true)
+                                        console.log('passed')                               
+                                    }
                                 }}>
                                     
                                     {savePetToggle === false ? <i className="fa-solid fa-heart"></i> : null}

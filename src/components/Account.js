@@ -53,6 +53,11 @@ const Account = () => {
   const auth = getAuth();
 
   useEffect(() => {
+    if(currentUserInformation.uid === undefined) {
+      navigate('/Signin')
+      return
+    }
+
     handleCurrentUserLoggedIn()
 
     if(currentUserInformation.uid !== undefined) {

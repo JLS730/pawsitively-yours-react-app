@@ -41,7 +41,7 @@
 .account-section .account-container .account-page-container {
   width: 100%;
   min-height: 43em;
-  padding: 1em;
+  padding: 1em 0;
 }
 .account-section .account-container .account-page-container .favorite-pet-page {
   display: flex;
@@ -231,4 +231,14 @@
   background-color: #007a92;
   color: white;
   border: 1px solid #007a92;
+}
+
+@media (max-width: 360px) {
+  .favorite-pet-page {
+    gap: 1em 0.5em !important;
+  }
+  .adoption-photo-containers {
+    height: 14em !important;
+    width: 9.2em !important;
+  }
 }/*# sourceMappingURL=account.css.map */

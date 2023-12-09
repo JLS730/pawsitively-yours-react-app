@@ -50,7 +50,7 @@
         .account-page-container {
             width: 100%;
             min-height: 43em;
-            padding: 1em;
+            padding: 1em 0;
             // background-color: rgb(194, 255, 134);
 
             
@@ -314,5 +314,16 @@
             }
 
         }
+    }
+}
+
+@media (max-width: 360px) {
+    .favorite-pet-page {
+        gap: 1em .5em !important;
+    }
+
+    .adoption-photo-containers {
+        height: 14em !important;
+        width:9.2em !important;
     }
 }

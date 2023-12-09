@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
+  padding: 0 0.5em;
 }
 .homepage-container .homepage-banner-container {
   background-color: rgb(244, 252, 255);
@@ -263,5 +264,14 @@
   .dog-adoption-search-container .dog-adoption-search-container-left {
     padding-bottom: 1.5em;
     min-width: 70% !important;
+  }
+}
+@media (max-width: 520px) {
+  .adoption-photo-containers {
+    height: 15em !important;
+    width: 10.2em !important;
+  }
+  .adoption-photo-containers .adoption-photo-information-container p {
+    font-size: 0.7em !important;
   }
 }/*# sourceMappingURL=homepage.css.map */

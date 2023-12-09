@@ -94,7 +94,7 @@
 }
 .navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .navigation-hamburger-menu {
   height: 0.1em;
-  width: 1.6em;
+  width: 1.4em;
   background-color: black;
   border-radius: 0.3em;
   position: absolute;
@@ -102,20 +102,20 @@
 .navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .navigation-hamburger-menu::after {
   content: "";
   height: 0.1em;
-  width: 1.6em;
+  width: 1.4em;
   background-color: black;
   border-radius: 0.3em;
   position: absolute;
-  transform: translateY(0.5em);
+  transform: translateY(0.4em);
 }
 .navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .navigation-hamburger-menu::before {
   content: "";
-  height: 0.1em;
-  width: 1.6em;
+  height: 0.12em;
+  width: 1.4em;
   background-color: black;
   border-radius: 0.3em;
   position: absolute;
-  transform: translateY(-0.5em);
+  transform: translateY(-0.4em);
 }
 .navigation-bar-container .navigation-bar-right .navigation-hamburger-menu-container .account-drop-down-hamburger-container {
   display: flex;
