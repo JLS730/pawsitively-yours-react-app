@@ -22,9 +22,11 @@ const Homepage = () => {
     const searchInputRef = useRef(null)
 
     useEffect(() => {
-        window.scrollTo(0, 0)
+        if(pageResultCount === 20) {
+            window.scrollTo(0, 0)
+        }
 
-        // console.log(currentFilter)
+        console.log(currentFilter)
 
         console.log(allAdoptionInformation.animals)
     }, [pageResultCount, filterToggle, currentFilterArray])

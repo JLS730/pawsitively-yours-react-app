@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import '../styles/create-account.css'
-import { Link, redirect } from 'react-router-dom'
+import { Link, redirect, useNavigate } from 'react-router-dom'
 
 import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../scripts/firebase';
@@ -20,6 +20,22 @@ const CreateAccount = () => {
     const [invalidPasswordToggle, setInvalidPasswordToggle] = useState(false)
     const [invalidEmailToggle, setInvalidEmailToggle] = useState(false)
     const [weakPasswordToggle, setWeakPasswordToggle] = useState(false)
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        handleCurrentUserLoggedIn()
+    }, [])
+
+    function handleCurrentUserLoggedIn() {
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            navigate('/Account')
+          } else {
+
+          }
+        });
+      }
 
     function handleCreateUser(email, password) {
         createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
