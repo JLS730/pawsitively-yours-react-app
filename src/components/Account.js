@@ -53,11 +53,6 @@ const Account = () => {
   const auth = getAuth();
 
   useEffect(() => {
-    if(currentUserInformation.uid === undefined) {
-      navigate('/Signin')
-      return
-    }
-
     handleCurrentUserLoggedIn()
 
     if(currentUserInformation.uid !== undefined) {
@@ -128,7 +123,7 @@ const Account = () => {
         setCurrentUserInformation(user)
         console.log(uid)
       } else {
-
+        navigate('/Signin')
       }
     });
   }
