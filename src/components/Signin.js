@@ -2,15 +2,11 @@ import React from 'react'
 import { useRef, useState, useEffect } from 'react';
 
 import '../styles/signin.css'
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../scripts/firebase';
 import { getAuth, signInWithEmailAndPassword,  onAuthStateChanged, signOut} from "firebase/auth";
 
 const Signin = () => {
-    const firebaseApp = initializeApp(firebaseConfig)
     const auth = getAuth()
 
     const emailInputRef = useRef(null)
@@ -19,7 +15,6 @@ const Signin = () => {
     const [passwordIncorrectToggle, setPasswordIncorrectToggle] = useState(false)
     const [userLoggedIn, setUserLoggedIn] = useState(false)
 
-    const location = useLocation()
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -28,15 +23,15 @@ const Signin = () => {
     
     function handleUserSignIn(email, password) {
         signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
-            // Signed up 
+
             const user = userCredential.user;
 
             console.log('signed in')
-            // ...
+
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            // ..
+
             setPasswordIncorrectToggle(true)
             console.log('Hit')
         });
@@ -55,17 +50,16 @@ const Signin = () => {
               console.log(currentUser)
               console.log(uid)
             } else {
-              // User is signed out
-              // ...
+
             }
         });
     }
 
     function handleSignOut() {
         signOut(auth).then(() => {
-            // Sign-out successful.
+
           }).catch((error) => {
-            // An error happened.
+
           });
     }
 
@@ -91,8 +85,6 @@ const Signin = () => {
                 </div>
                 {passwordIncorrectToggle === false ? null : <h2 className='login-credentials-incorrect-text'>Email and/or Password Incorrect</h2>}
                 <div className="login-credentials-sign-in-btn-container">
-                    {/* <button className="login-credentials-sign-in-btn" onClick={() => handleUserCheck()}>Check</button>
-                    <button className="login-credentials-sign-in-btn" onClick={() => handleSignOut()}>Logout</button> */}
                     <button className="login-credentials-sign-in-btn" onClick={() => {
                         handleUserSignIn(emailInputRef.current.value, passwordInputRef.current.value)
 

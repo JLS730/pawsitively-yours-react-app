@@ -24,10 +24,8 @@ const NavigtionBar = () => {
     setSigninMenuToggle(false)
     setSignedInMenuToggle(false)
     handleLoginCheck()
-    // console.log(auth)
   }, [userSignedIn])
 
-  // const firebaseApp = initializeApp(firebaseConfig)
   const auth = getAuth()
 
   function handleLoginCheck() {
@@ -36,10 +34,6 @@ const NavigtionBar = () => {
         const uid = user.uid
 
         setUserSignedIn(true)
-
-        // console.log(uid)
-        // console.log('Signed in =' + signedInMenuToggle)
-        // console.log('user signed in =' + userSignedIn)
       }
     })
   }
@@ -48,7 +42,7 @@ const NavigtionBar = () => {
     signOut(auth).then(() => {
         setUserSignedIn(false)
       }).catch((error) => {
-        // An error happened.
+
       });
     }
 
@@ -103,8 +97,6 @@ const NavigtionBar = () => {
           setSigninMenuHamburgerToggle(false)
           setSignedInMenuHamburgerToggle(false)
           setOutsideClick(true)
-          
-          console.log(outsideClick)
         }
       }
 
@@ -146,8 +138,6 @@ const NavigtionBar = () => {
               }
   
               signinMenuToggle === true ? setSigninMenuToggle(false) : setSigninMenuToggle(true)
-
-              console.log('user signed out outside')
             }
             
             if(userSignedIn === true) {
@@ -158,14 +148,9 @@ const NavigtionBar = () => {
               }
   
               signedInMenuToggle === true ? setSignedInMenuToggle(false) : setSignedInMenuToggle(true)
-
-              console.log('user signed in outside')
             }
-            
-            console.log(signinMenuToggle)
-            console.log(signedInMenuToggle)
           }}></i>
-          {/* Sign-in */}
+
           {signinMenuToggle === false && userSignedIn === false ? null : signinMenuToggle === false && userSignedIn === true ? null : signinMenuToggle === true && userSignedIn === true ? null : <SignInDropDownMenu />}
           {signinMenuToggle === false && userSignedIn === false ? null : signedInMenuToggle === true && userSignedIn === false ? null : signedInMenuToggle === false && userSignedIn === true ? null : signedInMenuToggle === false && userSignedIn === false ? null : <SignedInDropDownMenu />}
         </div>
@@ -179,8 +164,6 @@ const NavigtionBar = () => {
               }
   
               signinMenuHamburgerToggle === true ? setSigninMenuHamburgerToggle(false) : setSigninMenuHamburgerToggle(true)
-
-              console.log('user signed out outside')
             }
             
             if(userSignedIn === true) {
@@ -191,12 +174,7 @@ const NavigtionBar = () => {
               }
   
               signedInMenuHamburgerToggle === true ? setSignedInMenuHamburgerToggle(false) : setSignedInMenuHamburgerToggle(true)
-
-              console.log('user signed in outside')
             }
-            
-            console.log(signinMenuToggle)
-            console.log(signedInMenuToggle)
           }}>
           <div className="navigation-hamburger-menu"></div>
           {signinMenuHamburgerToggle === false && userSignedIn === false ? null : signinMenuHamburgerToggle === false && userSignedIn === true ? null : signinMenuHamburgerToggle === true && userSignedIn === true ? null : <SignInDropDownHamburgerMenu />}

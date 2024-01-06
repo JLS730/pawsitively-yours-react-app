@@ -2,27 +2,23 @@
     width: 1100px;
     max-width: 100%;
     margin: auto;
-    // height: calc(100vh - 57.6px - 151.133px);
     min-height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 11.85em .7em;
-    // background-color: rgb(72, 177, 177);
 
     .account-container {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        // background-color: aqua;
         width: 80em;
 
         .account-navigation-bar-container {
             display: flex;
             justify-content: center;
             align-self: flex-start;
-            // background-color: rgb(245, 245, 245);
             width: 100%;
 
             div {
@@ -30,7 +26,6 @@
                 justify-content: space-between;
                 align-items: center;
                 flex-direction: column;
-                // padding: .5em 1.5em;
                 cursor: pointer;
 
                 p {
@@ -51,7 +46,6 @@
             width: 100%;
             min-height: 43em;
             padding: 1em 0;
-            // background-color: rgb(194, 255, 134);
 
             
             
@@ -72,7 +66,6 @@
                     align-items: center;
                     overflow: hidden;
                     position: relative;
-                    // box-shadow: -10px -10px -10px #000000;
                     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                     border: 4px solid #caf0f8;
 
@@ -83,6 +76,7 @@
                         border-radius: 50%;
                         background-color: black;
                         transition: .1s all linear;
+                        z-index: 1;
 
                         
                         i {
@@ -100,7 +94,7 @@
                             color: red;
                         }
                     }
-                    
+
                     img {
                         height: 115%;
                     }
@@ -109,10 +103,8 @@
                         height: 20%;
                         width: 100%;
                         background-color: #caf0f8;
-                        // background-color: rgba(0, 0, 0, .5);
                         position: absolute;
                         bottom: 0;
-                        // box-shadow: 0px -10px 28px rgb(0, 0, 0, .7);
                     }
     
     
@@ -125,16 +117,15 @@
                         padding: .7em;
     
                         p {
-                            // padding: .2em 0;
                             padding-top: .4em;
                         }
                     }
+                    
                 }
             }
 
             .settings-page {
                 width: 100%;
-                // background-color: aqua;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -143,7 +134,6 @@
 
                 .settings-about-you-container {
                     width: 80%;
-                    // background-color: azure;
                     padding: 2.5em .5em;
 
                     .about-you-title-text {
@@ -162,7 +152,6 @@
                         width: 100%;
 
                         div {
-                            // background-color: pink;
                             width: 20em;
                             
                             p {
@@ -183,7 +172,6 @@
 
                 .settings-availability-container {
                     width: 80%;
-                    // background-color: rgb(255, 162, 236);
                     padding: 2.5em .5em;
 
                     .contact-availability-title-text {
@@ -193,10 +181,7 @@
                     }
                     
                     .contact-time-container {
-                        // display: flex;
-                        // border: 1px solid black;
                         padding: 2em;
-                        // background-color: aquamarine;
                         width: 100%;
                         font-family: sans-serif;
 
@@ -209,11 +194,9 @@
                         }
 
                         .times-container {
-                            // background-color: yellow;
                             padding-left: .5em;
 
                             div {
-                                // background-color: aqua;
                                 padding-top: .5em;
 
                                 label {
@@ -224,10 +207,7 @@
                     }
                     
                     .contact-day-container {
-                        // display: flex;
-                        // border: 1px solid black;
                         padding: 2em;
-                        // background-color: aquamarine;
                         width: 100%;
                         font-family: sans-serif;
 
@@ -240,11 +220,9 @@
                         }
 
                         .days-container {
-                            // background-color: yellow;
                             padding-left: .5em;
 
                             div {
-                                // background-color: aqua;
                                 padding-top: .5em;
 
                                 label {
@@ -257,7 +235,6 @@
 
                 .settings-address-container {
                     width: 80%;
-                    // background-color: azure;
                     padding: 2.5em .5em;
 
                     .address-title-text {
@@ -267,17 +244,11 @@
 
                     .address-container {
                         display: flex;
-                        // flex-wrap: wrap;
                         justify-content: center;
                         flex-direction: column;
-                        // border: 1px solid black;
-                        // padding-left: 2em;
-                        // background-color: aquamarine;
                         width: 100%;
 
                         div {
-                            // background-color: pink;
-                            // width: 20em;
                             width: 100%;
                             
                             p {
@@ -304,6 +275,7 @@
                     padding: .2em;
                     font-family: sans-serif;
                     transition: .1s all linear;
+                    margin: .6em 0;
                 }
 
                 button:hover {

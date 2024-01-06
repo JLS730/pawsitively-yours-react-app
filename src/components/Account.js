@@ -4,9 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 import { firebaseConfig } from '../scripts/firebase'
 import { initializeApp } from "firebase/app";
 
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, deleteUser } from "firebase/auth";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 import { doc, getFirestore, getDoc, getDocs, setDoc, deleteDoc, collection } from "firebase/firestore";
@@ -51,6 +51,7 @@ const Account = () => {
   const firestoreDB = getFirestore(app)
 
   const auth = getAuth();
+  const loggedInUser = auth.currentUser
 
   useEffect(() => {
     handleCurrentUserLoggedIn()
@@ -58,8 +59,6 @@ const Account = () => {
     if(currentUserInformation.uid !== undefined) {
       handleGetFavoritesInformation()
     }
-
-    console.log(currentUserInformation.uid)
   }, [currentUserInformation])
 
   function handleRefreshPage() {
@@ -67,7 +66,6 @@ const Account = () => {
   }
 
   async function handleFavoriteDeletion(dogName) {
-    console.log(dogName)
     await deleteDoc(doc(firestoreDB, currentUserInformation.uid, 'Favorites', "Dogs", dogName));
   }
 
@@ -98,11 +96,7 @@ const Account = () => {
       fridayRef.current.checked = docSnap.data().available.day.friday
       saturdayRef.current.checked = docSnap.data().available.day.saturday
       sundayRef.current.checked = docSnap.data().available.day.sunday
-
-      console.log('Tis Working')
     }
-
-    console.log(docSnap.data())
   }
   
   async function handleGetFavoritesInformation() {
@@ -110,9 +104,7 @@ const Account = () => {
     
     querySnapshot.forEach((doc) => {
       setCurrentFavorites((oldArray) => [...oldArray, doc.data()])
-      // console.log(doc.id, " => ", doc.data());
     });
-    console.log(currentFavorites)
   }
 
   function handleCurrentUserLoggedIn() {
@@ -126,6 +118,21 @@ const Account = () => {
         navigate('/Signin')
       }
     });
+  }
+
+  function handleDeleteUser() {
+    const result = window.confirm("Are you sure you want to delete your account?")
+
+    if(result == true) {
+      deleteUser(loggedInUser).then(() => {
+
+        navigate('/Signin')
+      }).catch((error) => {
+
+      });
+    } else {
+
+    }
   }
 
   function handleUserSubmittedInformation() {
@@ -162,130 +169,33 @@ const Account = () => {
   function FavoritesPage() {
     return (
       <div className="favorite-pet-page">
-        {/* <button onClick={() => handleFavoriteDeletion()}>Test</button> */}
-            {/* <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div>
-            <div className="adoption-photo-container-1">
-              <img src={adoptPlaceholder} alt="d" />
-              <div className="adoption-photo-box-shadow"></div>
-              <div className="adoption-photo-information-container">
-                  <p className="adoption-photo-name">Placeholder Name</p>
-                  <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-              </div>
-            </div> */}
+        {currentFavorites.length === 0 ? null : currentFavorites.map((dog, x) => {
+            return (
+              <div className={`adoption-photo-container-${x} adoption-photo-containers`}>
+                  <div className="adoption-delete-button-container" onClick={(event) => {
 
-            {currentFavorites.length === 0 ? null : currentFavorites.map((dog, x) => {
-                return (
-                  <div className={`adoption-photo-container-${x} adoption-photo-containers`}>
-                    {/* <div className="adoption-delete-button-container" onClick={() => handleFavoriteDeletion(dog.name)}> */}
-                    <div className="adoption-delete-button-container" onClick={(event) => {
-                      // handleGetFavoritesInformation()
-                      handleFavoriteDeletion(dog.name)
-                      event.target.parentElement.parentElement.remove()
+                    handleFavoriteDeletion(dog.name)
+                    event.target.parentElement.parentElement.remove()
 
-                      setTimeout(() => {
-
-                        handleRefreshPage()
-                      }, 300)
-                    }}>
-                      <i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i>
-                    </div>
-                    <img src={dog.image === null ? adoptPlaceholder : dog.image.full} alt="d" />
-                    <div className="adoption-photo-box-shadow"></div>
-                    <div className="adoption-photo-information-container">
-                        <p className="adoption-photo-name">{dog.name}</p>
-                        <p className="adoption-photo-sex-and-id">{dog.gender} &#x2022; {dog.id}</p>
-                    </div>
+                    setTimeout(() => {
+                      
+                      handleRefreshPage()
+                    }, 300)
+                  }}>
+                    <i class="fa-sharp fa-solid fa-circle-xmark fa-2xl"></i>
                   </div>
-                  )
-                })}
-          </div>
+                  <Link to={`/Dog-Information/${dog.id}`} className={`adoption-photo-container-${x} adoption-photo-containers`} key={`${dog.id}`} state={{ from: dog.name }}>
+                    <img src={dog.image === null ? adoptPlaceholder : dog.image.full} alt="d" />
+                  </Link>
+                  <div className="adoption-photo-box-shadow"></div>
+                  <div className="adoption-photo-information-container">
+                      <p className="adoption-photo-name">{dog.name}</p>
+                      <p className="adoption-photo-sex-and-id">{dog.gender} &#x2022; {dog.id}</p>
+                  </div>
+                </div>
+              )
+            })}
+      </div>
     )
   }
 
@@ -402,10 +312,7 @@ const Account = () => {
               </div>
             </div>
             <button onClick={() => handleUserSubmittedInformation()}>Save Information</button>
-            {/* <button onClick={() => handleGetUserInformation()}>Check User</button>
-            <button onClick={() => {
-              mondayRef.current.checked = true
-            }}>Check Mark Test</button> */}
+            {loggedInUser.email === 'jlstest001' || loggedInUser.email === 'jlstest002' ? null : <button onClick={() => handleDeleteUser()}>Delete Account</button>}
           </div>
     )
   }
@@ -414,11 +321,6 @@ const Account = () => {
     <section className="account-section">
       <div className="account-container">
         <div className="account-navigation-bar-container">
-          {/* <div className="account-navigation-active-inquiries-container">
-            <p className="active-inquiries-text">Active Inquiries</p>
-            <div className="account-navigation-container-selected"></div>
-          </div> */}
-          
           <div className="account-navigation-favorite-pets-container" onClick={() => {
             setSettingsPageToggle(false)
             setFavoritesPageToggle(true)
@@ -428,7 +330,6 @@ const Account = () => {
           </div>
           <div className="account-navigation-settings-container" onClick={() => {
             handleGetUserInformation()
-            // handleGetFavoritesInformation()
 
             setSettingsPageToggle(true)
             setFavoritesPageToggle(false)

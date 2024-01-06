@@ -3,15 +3,12 @@ import React from 'react'
 import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
-import PropTypes from "prop-types";
-
 import dogParkBanner from '../images/dog-placeholder-500x500-1.png'
 import adoptPlaceholder from '../images/adopt-placeholder.avif'
 import noResultsImage from '../images/no-results-puppy.png'
 
 import allAdoptionInformation from '../scripts/dog-adoption-info'
 import '../styles/homepage.css'
-import axios from 'axios'
 
 const Homepage = () => {
     const [pageResultCount, setPageResultCount] = useState(20)
@@ -25,10 +22,6 @@ const Homepage = () => {
         if(pageResultCount === 20) {
             window.scrollTo(0, 0)
         }
-
-        console.log(currentFilter)
-
-        console.log(allAdoptionInformation.animals)
     }, [pageResultCount, filterToggle, currentFilterArray])
 
     function handleCurrentPageCount() {
@@ -64,8 +57,6 @@ const Homepage = () => {
             }
             
             setFilterToggle(!filterToggle)
-    
-            console.log(currentFilter)
         } else if(finalSearchTerm === 'Puppy' || finalSearchTerm === 'Young' || finalSearchTerm === 'Adult' || finalSearchTerm === 'Senior') {
             let ageFilterArray = allAdoptionInformation.animals.filter((dog) => {
                 return dog.age === finalSearchTerm
@@ -78,8 +69,6 @@ const Homepage = () => {
             }
             
             setFilterToggle(!filterToggle)
-    
-            console.log(currentFilter)
         } else if(finalSearchTerm === 'Small' || finalSearchTerm === 'Medium' || finalSearchTerm === 'Large' || finalSearchTerm === 'Extra Large') {
             let sizeFilterArray = allAdoptionInformation.animals.filter((dog) => {
                 return dog.size === finalSearchTerm
@@ -92,8 +81,6 @@ const Homepage = () => {
             }
             
             setFilterToggle(!filterToggle)
-    
-            console.log(currentFilter)
         } else if(finalSearchTerm) {
             let nameFilterArray = allAdoptionInformation.animals.filter((dog) => {
                 return dog.name === finalSearchTerm
@@ -106,10 +93,8 @@ const Homepage = () => {
             }
             
             setFilterToggle(!filterToggle)
-    
-            console.log(currentFilter)
         } else {
-            console.log('Not a Valid finalSearchTerm')
+
         }
     }
 
@@ -165,14 +150,8 @@ const Homepage = () => {
             </div>
             <div className="dog-adoption-photo-container">
                 {currentFilter.length === 0 && filterToggle === true ? <NoDogsFound /> : null}
-                {/* {currentFilter.length === 0 ? <button onClick={() => console.log(currentFilter)}>Test Button</button> : null} */}
-                
 
-                
-                
                 {filterToggle === true ? null : allAdoptionInformation.animals.slice(0, pageResultCount).map((info, x) => {
-                    // console.log(info)
-
                     return (
                         <Link to={`Dog-Information/${info.id}`} className={`adoption-photo-container-${x} adoption-photo-containers`} key={`${info.id}`} state={{ from: info.name }}>
                             <img src={info.primary_photo_cropped === null ? adoptPlaceholder : info.primary_photo_cropped.large} alt="" />
@@ -186,8 +165,6 @@ const Homepage = () => {
                 })}
                 
                 {filterToggle === false ? null : currentFilter.slice(0, pageResultCount).map((info, x) => {
-                    // console.log(info)
-
                     return (
                         <Link to={`Dog-Information/${info.id}`} className={`adoption-photo-container-${x} adoption-photo-containers`} key={`${info.id}`}>
                             <img src={info.primary_photo_cropped === null ? adoptPlaceholder : info.primary_photo_cropped.large} alt="" />
@@ -199,29 +176,6 @@ const Homepage = () => {
                         </Link>
                     )
                 })}
-                
-                {/* {!dogImages.length === 0 ? null : dogImages.map((image, x) => {
-                    return (
-                        <div className={`adoption-photo-container-${x} adoption-photo-containers`} key={`key-${x}`}>
-                            <img src={image} alt="" />
-                            <div className="adoption-photo-box-shadow"></div>
-                            <div className="adoption-photo-information-container">
-                                <p className="adoption-photo-name">{`${dogNames[x]}`}</p>
-                                <p className="adoption-photo-sex-and-id">{`${dogGenders[Math.floor(Math.random() * dogGenders.length)]}`} &bull; {`ID# ${dogID[x]}`}</p>
-                            </div>
-                        </div>
-                    )
-                })} */}
-
-                {/* <div className="adoption-photo-container-1">
-                    <img src={dogImages[0]} alt="d" />
-                    <div className="adoption-photo-box-shadow"></div>
-                    <div className="adoption-photo-information-container">
-                        <p className="adoption-photo-name">Placeholder Name</p>
-                        <p className="adoption-photo-sex-and-id">Female &#x2022; 1234567</p>
-                    </div>
-                </div> */}
-               
 
             </div>
             {filterToggle === false && pageResultCount < allAdoptionInformation.animals.length ? <button className="dog-adoption-load-more-btn" onClick={() => handleCurrentPageCount()}>Load More Pets</button> : null}

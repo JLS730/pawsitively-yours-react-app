@@ -21,19 +21,16 @@
     }
 
     .footer-right {
-        // background-color: aqua;
         display: flex;
         justify-content: space-between;
         align-items: center;
         min-width: 35%;
 
         .footer-help-links {
-            // width: 63%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             list-style: none;
-            // background-color: bisque;
 
             li {
                 margin: 0 .8em;
@@ -41,8 +38,6 @@
         }
 
         .footer-socials-container {
-            // background-color: rgb(138, 255, 138);
-            // width: 15%;
             display: flex;
             justify-content: space-between;
             align-items: center;

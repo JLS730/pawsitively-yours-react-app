@@ -70,6 +70,7 @@
   border-radius: 50%;
   background-color: black;
   transition: 0.1s all linear;
+  z-index: 1;
 }
 .account-section .account-container .account-page-container .favorite-pet-page .adoption-photo-containers .adoption-delete-button-container i {
   color: white;
@@ -226,6 +227,7 @@
   padding: 0.2em;
   font-family: sans-serif;
   transition: 0.1s all linear;
+  margin: 0.6em 0;
 }
 .account-section .account-container .account-page-container .settings-page button:hover {
   background-color: #007a92;

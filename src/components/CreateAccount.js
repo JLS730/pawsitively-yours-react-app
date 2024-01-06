@@ -3,14 +3,11 @@ import React from 'react'
 import { useRef, useState, useEffect } from 'react';
 
 import '../styles/create-account.css'
-import { Link, redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../scripts/firebase';
-import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, signInAnonymously, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth,createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 const CreateAccount = () => {
-    const firebaseApp = initializeApp(firebaseConfig)
     const auth = getAuth()
 
     const emailInputRef = useRef(null)
@@ -53,7 +50,6 @@ const CreateAccount = () => {
             if(errorCode === 'auth/invalid-email' || errorCode === 'auth/missing-email') {
                 setInvalidEmailToggle(true)
                 emailInputRef.current.value = ''
-                console.log('Invalid Email')
             } else if(errorCode === 'auth/weak-password') {
                 passwordInputRef.current.value = ''
                 passwordConfirmInputRef.current.value = ''
@@ -76,17 +72,7 @@ const CreateAccount = () => {
                 <input type="text" className="create-account-credentials-input-email" placeholder='Email Address' ref={emailInputRef}/>
                 <input type="password" className="create-account-credentials-input-password" placeholder='Password' ref={passwordInputRef}/>
                 <input type="password" className="create-account-credentials-input-password" placeholder='Confirm Password' ref={passwordConfirmInputRef}/>
-                {/* <div className="create-account-credentials-help-container">
-                    <div className="create-account-credentials-remember-me-container">
-                        <input type="checkbox" id="remember-me" name="remember-me" value="Bike" />
-                        <label for="remember-me">Remember Me</label>
-                    </div>
-                    <Link><p className="create-account-credentials-forgrot-password">Forgot Password?</p></Link>
-                </div> */}
                 <div className="create-account-credentials-sign-in-btn-container">
-                    {/* <button className="create-account-credentials-sign-in-btn" onClick={() => handleAnonymousLogin()}>Log In</button> */}
-                    {/* <button className="create-account-credentials-sign-in-btn" onClick={() => handleAnonymousLoginCheck()}>Check</button> */}
-                    {/* <button className="create-account-credentials-sign-in-btn" onClick={() => handleUserCheck()}>Log Out</button> */}
                     {invalidPasswordToggle === false ? null : <p>Passwords do not match!</p>}
                     {invalidEmailToggle === false ? null : <p>Email is Invalid!</p>}
                     {weakPasswordToggle === false ? null : <p>Password is Weak! Password should be at least 6 characters!</p>}
@@ -98,8 +84,6 @@ const CreateAccount = () => {
 
                             passwordInputRef.current.value = ''
                             passwordConfirmInputRef.current.value = ''
-
-                            console.log('no match')
                             return
                         }
                         
@@ -110,7 +94,6 @@ const CreateAccount = () => {
 
                         setWeakPasswordToggle(false)
 
-                        // emailInputRef.current.value = ''
                         passwordInputRef.current.value = ''
                         passwordConfirmInputRef.current.value = ''
                     }}>Create Account</button>
