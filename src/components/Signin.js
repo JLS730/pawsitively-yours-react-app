@@ -55,15 +55,6 @@ const Signin = () => {
         });
     }
 
-    function handleSignOut() {
-        signOut(auth).then(() => {
-
-          }).catch((error) => {
-
-          });
-    }
-
-
   return (
     <div className="login-container">
         <div className="login-credentials-container">

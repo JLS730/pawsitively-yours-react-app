@@ -1,3 +1,49 @@
+.homepage-banner-container {
+  background-color: rgb(244, 252, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+.homepage-banner-container .banner-image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-height: 1080px;
+}
+.homepage-banner-container .banner-image .image-tint {
+  background-color: rgba(200, 100, 0, 0.5);
+  background-blend-mode: multiply;
+}
+.homepage-banner-container .header-image-tint {
+  position: absolute;
+  height: 1000px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.homepage-banner-container .homepage-banner-text-container {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  max-width: 100%;
+}
+.homepage-banner-container .homepage-banner-text-container p {
+  font-family: "Pacifico", cursive;
+  padding: 0.3em 0;
+  font-size: 3em;
+  text-align: center;
+  color: #ddf8fd;
+  text-shadow: #00b4d8 1px 1px;
+}
+
 .homepage-container {
   display: flex;
   justify-content: center;
@@ -5,27 +51,6 @@
   flex-direction: column;
   position: relative;
   padding: 0 0.5em;
-}
-.homepage-container .homepage-banner-container {
-  background-color: rgb(244, 252, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 1100px;
-  max-width: 100%;
-  height: 9em;
-  border-bottom-left-radius: 0.3em;
-  border-bottom-right-radius: 0.3em;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-}
-.homepage-container .homepage-banner-container img {
-  height: 90%;
-}
-.homepage-container .homepage-banner-container .homepage-banner-text-container p {
-  font-family: sans-serif;
-  padding: 0.3em 0;
-  font-size: 0.95em;
-  font-family: sans-serif;
 }
 .homepage-container .homepage-information-container {
   background-color: rgb(244, 252, 255);
@@ -267,6 +292,23 @@
   }
 }
 @media (max-width: 520px) {
+  .homepage-banner-text-container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px !important;
+    max-width: 100%;
+  }
+  .homepage-banner-text-container p {
+    font-family: "Pacifico", cursive;
+    padding: 0.3em 0;
+    font-size: 2.5em !important;
+    text-align: center;
+    color: #ddf8fd;
+  }
   .adoption-photo-containers {
     height: 15em !important;
     width: 10.2em !important;
