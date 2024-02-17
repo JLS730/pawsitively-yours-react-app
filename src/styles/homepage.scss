@@ -4,10 +4,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    // max-width: 100%;
-    // height: 9em;
-    // border-bottom-left-radius: .3em;
-    // border-bottom-right-radius: .3em;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     height: 500px;
     overflow: hidden;
@@ -33,7 +29,6 @@
 
     .homepage-banner-text-container {
         position: absolute;
-        // z-index: 1;
         top: 80px;
         left: 0;
         right: 0;
@@ -356,22 +351,10 @@
 
 @media (max-width: 520px) {
     .homepage-banner-text-container {
-        position: absolute;
-        // z-index: 1;
-        top: 80px;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
         width: 350px !important;
-        max-width: 100%;
 
         p {
-            font-family: "Pacifico", cursive;
-            padding: .3em 0;
             font-size: 2.5em !important;
-            text-align: center;
-            color: #ddf8fd;
         }
 
 

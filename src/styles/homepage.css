@@ -293,21 +293,10 @@
 }
 @media (max-width: 520px) {
   .homepage-banner-text-container {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
     width: 350px !important;
-    max-width: 100%;
   }
   .homepage-banner-text-container p {
-    font-family: "Pacifico", cursive;
-    padding: 0.3em 0;
     font-size: 2.5em !important;
-    text-align: center;
-    color: #ddf8fd;
   }
   .adoption-photo-containers {
     height: 15em !important;
